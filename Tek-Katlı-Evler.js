@@ -249,12 +249,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 var numpar = 0
+var stop = false
 
 
 
 
 
 function setSpeed (){
+    stop = true
 
     var imgNumpar = document.querySelector(".D3D-SCALL").value;
     
@@ -272,5 +274,32 @@ function setSpeed (){
     
     
 }
+
+var numperx = 0
+function start3D (){
+    if(stop==false){
+    
+    if( numperx < 37 ){
+    
+    
+    document.querySelector(".D3D-SCALL").value= numperx
+    
+    var imgxx = document.querySelector(".M-3D-IMG");
+
+    var myvarx = imgs.at(numperx);
+    
+    imgxx.style.content='url('+ myvarx +')'
+    
+    numperx ++
+    
+        }else {numperx = 1}
+    
+        setTimeout(start3D, 60);}
+    
+    }
+
+
+
+       start3D ()
 
 
